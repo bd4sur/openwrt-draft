@@ -1,7 +1,15 @@
 # RA50 (Redmi AX5-JDC)
 
-- 用于备份降级固件、原厂分区数据和[第三方UBoot](https://mbd.pub/o/bread/mbd-YpqUlJhy)（付费软件，此处加密，仅供自用，解压密码为米3管理密码）。
-- 分为1GB内存版和512MB内存版。
+- 用于备份降级固件、原厂分区数据和[第三方UBoot](https://mbd.pub/o/bread/mbd-YpqUlJhy)（自购付费软件，此处加密，仅供自用备份，解压密码为米3管理密码）。
+- 分为1GB内存版和512MB内存版，1GB内存版需要刷写CDT分区及其冗余分区。
+
+## 文件列表
+
+- `miwifi_ra50_firmware_a69aa_1.1.47.bin`：原厂降级固件，用于开启SSH。CRC32=`E16C08B8`
+- `kernel.bin`：过渡固件的内核文件。CRC32=`46BA2867`
+- `rootfs.7z`：过渡固件的根文件系统，由于文件过大，分成两个压缩分卷。最终解压出的`rootfs.bin`其CRC32=`F0137A65`
+- `AX5_JDC_UBoot_MIBIB.7z`：加密后的UBoot和大分区表。CRC32=`EFF5544B`
+- `CDT_IPQ6000_1G.bin`：CDT分区数据（两个CDT分区冗余保存同一份数据），用于1GB大内存支持。CRC32=`04F3CD35`
 
 ## 刷机方法参考
 
