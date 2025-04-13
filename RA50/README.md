@@ -9,7 +9,7 @@
 - `kernel.bin`：过渡固件的内核文件。CRC32=`46BA2867`
 - `rootfs.7z`：过渡固件的根文件系统，由于文件过大，分成两个压缩分卷。最终解压出的`rootfs.bin`其CRC32=`F0137A65`
 - `AX5_JDC_UBoot_MIBIB.7z`：加密后的UBoot和大分区表。CRC32=`EFF5544B`
-- `CDT_IPQ6000_1G.bin`：CDT分区数据（两个CDT分区冗余保存同一份数据），用于1GB大内存支持。CRC32=`04F3CD35`
+- `CDT_IPQ6000_1G.bin`：CDT分区数据（两个CDT分区冗余保存同一份数据），用于1GB大内存支持，注意事项见后文。CRC32=`04F3CD35`
 
 ## 刷机方法参考
 
@@ -83,7 +83,7 @@ fw_setenv bootcmd bootipq
 
 10、路由器断电，然后按住reset按键开机，黄灯闪5下后变蓝，一直按住reset键，浏览器通过静态IP=192.168.1.1打开固件更新界面后松开reset键，即进入第三方UBoot，可刷入factory固件。
 
-11、内存改1GB的还需要刷CDT分区：
+11、内存改1GB的还需要刷CDT分区。注意：此处备份的CDT数据，是从镁光D9STQ内存+已刷第三方UBoot的机器中提取出来，不保证适用于其他机器。
 
 ```
 dd if=/tmp/CDT_IPQ6000_1G.bin of=/dev/mmcblk0p10
