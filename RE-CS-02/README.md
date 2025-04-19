@@ -5,6 +5,7 @@
 ## 文件列表
 
 - `JDC_AX6600_uboot_gpt.7z`：加密后的UBoot和分区表。CRC32=`529F3E53`
+- `mmcblk0p10_0CDT_RE-CS-02_xxx.bin`：分别是1GB、2GB、4GB内存的CDT分区文件。其中4GB的实测可用，由于IPQ60xx的限制，最多可识别3GB。带Original的是从原厂CDT中dump出来的。4GB版的CRC32=`4A3BAA0C`
 
 ## 刷UBoot方法参考(TTL，1GB内存+原厂固件r2204已验证)
 
